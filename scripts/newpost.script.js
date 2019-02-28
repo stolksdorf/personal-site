@@ -11,9 +11,16 @@ const PostName = _.startCase(postname);
 
 const file = `---
 title     : ${PostName}
-tags      : temp,test
-published : ${new Date().toISOString()}
-updated   : ${new Date().toISOString()}
+desc      : This is a new post
+published : false
+draft     : true
+created   : ${new Date().toISOString().split('T')[0]}
+updated   : ${new Date().toISOString().split('T')[0]}
+tags:
+  - js
+  - personal
+  - coding
+  - thoughts
 ---
 
 # ${PostName}

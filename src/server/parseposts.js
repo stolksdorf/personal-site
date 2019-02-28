@@ -1,6 +1,6 @@
-const fse = require('fs-extra');
+const fse  = require('fs-extra');
 const path = require('path');
-const md = new require('markdown-it')();
+const md   = new require('markdown-it')();
 md.use(require('markdown-it-meta'));
 
 const parsePost = async (postPath)=>{
@@ -15,5 +15,8 @@ const parsePost = async (postPath)=>{
 
 module.exports = async ()=>{
 	const postPaths = await fse.readdir('./posts');
-	return Promise.all(postPaths.map(parsePost));
+	const posts = await Promise.all(postPaths.map(parsePost));
+	return posts.filter((post)=>post.meta.published);
 };
+
+//module.exports().then((res)=>console.log(res))
