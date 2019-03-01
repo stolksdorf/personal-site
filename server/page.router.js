@@ -1,7 +1,10 @@
 const router = require('express').Router();
 const mainRenderer = require('../build/main/render.js');
 
-router.get('/', (req, res) => {
+
+router.get('/',(req,res)=>res.redirect('/resume'));
+
+router.get('*', (req, res) => {
 	return res.send(mainRenderer({
 		url : req.url
 	}));

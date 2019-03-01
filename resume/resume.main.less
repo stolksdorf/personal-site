@@ -1,0 +1,63 @@
+
+body {
+	margin      : 0;
+	font-size   : 1em;
+	font-weight : 300;
+	color       : #1D1313;
+}
+*{
+	box-sizing : border-box;
+}
+p,ul,blockquote{
+	margin : 0;
+	page-break-inside: avoid;
+}
+.container {
+	margin     : 0 auto;
+	padding    : 40px;
+	background : #ddd;
+	text-align : left;
+	@media print{
+		padding : 0;
+		background-color: white;
+	}
+}
+
+@page {
+	margin: 0px;
+}
+.resume {
+	width      : 912px;
+	margin     : 0 auto;
+	padding    : 30px 40px;
+	background : #fff;
+}
+.beforeElement(){
+	position : relative;
+	&:before{
+		content  : "";
+		position : absolute;
+		display  : block;
+		top      : 0px;
+		left     : 0px;
+		z-index  : 0;
+	}
+}
+table{
+	width : 100%;
+}
+
+/* Company Logos */
+// h3[id^=north]{
+// 	&:before{
+// 		content                      : '';
+// 		display                      : inline-block;
+// 		height                       : 2em;
+// 		width                        : 100px;
+// 		margin-right                 : 20px;
+// 		//z-index
+// 		background-repeat            : no-repeat;
+// 		background-size              : contain;
+// 		background-image: url('https://www.workintech.ca/images/1970/default/16f5fae9-4fa5-4c16-bb41-46f6ef69712e.png');
+// 	}
+// }

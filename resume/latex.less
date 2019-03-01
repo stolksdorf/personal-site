@@ -1,0 +1,97 @@
+
+@import './resume/resume.main.less';
+@import './resume/latex_fonts.less';
+
+.latex{
+	font-family: 'Latex', serif;
+
+	h1{
+		text-transform: uppercase;
+		text-align: center;
+
+		&+h3{
+			font-size: 1em;
+			text-align: center;
+			display: none;
+		}
+	}
+
+	h2,h3,h4,h5{
+		font-size: 1em;
+		margin: 0;
+	}
+
+
+	h2{
+		margin-top: 1em;
+		margin-bottom: 0.25em;
+		text-transform: uppercase;
+		border-bottom: 1px solid black;
+	}
+
+
+
+	h4{
+		padding-left: 1em;
+	}
+
+	blockquote{
+		.beforeElement();
+		padding-left: 50px;
+		font-size: 0.8em;
+		margin : 5px 0px;
+		&:before{
+			//background-color: #ddd;
+			background-color: black;
+			top:0px;
+			bottom:0px;
+			width: 1px;
+			left: 43px;
+		}
+	}
+
+
+
+	section.contact{
+		h2{ display: none; }
+		ul{
+			display: flex;
+			justify-content: space-around;
+			list-style: none;
+			padding: 0;
+			li{
+				//margin: 0 10px;
+				text-align: center;
+				width: 20%;
+			}
+		}
+	}
+
+
+
+	table{
+		width: 100%;
+	}
+
+	h2 ~ *:not(h2){
+		margin-left: 1em;
+	}
+
+
+	/* Experience dates */
+	h3 em, h4 em{
+		float: right;
+		font-weight: 500;
+		font-size: 0.8em;
+	}
+
+	/* Hide logos */
+	h3:before{
+		display: none !important;
+	}
+
+	/* Hide sections */
+	section.education{
+		display: none;
+	}
+}

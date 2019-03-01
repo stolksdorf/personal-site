@@ -1,0 +1,102 @@
+@import './resume/resume.main.less';
+
+@import url('https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+.pretty{
+
+	.resume{
+		font-family : 'Open Sans', sans-serif;
+
+
+
+	}
+
+
+	section.contact{
+		h2{ display: none; }
+
+		border-top: 1px solid black;
+		border-bottom: 1px solid black;
+
+		ul{
+			list-style: none;
+			display: flex;
+			padding : 0;
+			justify-content: space-around;
+
+			text-align: center;
+			li{
+				.beforeElement();
+				flex-grow:1;
+				border-right: 1px solid black;
+				padding: 20px;
+				&:last-child{
+					border-right:none;
+				}
+
+				&:nth-child(1):before{ content: "\f095";} //Phone
+				&:nth-child(2):before{ content: "\f09b";} //github
+				&:nth-child(3):before{ content: "\f0e0";} //mail
+
+				//icon{
+				&:before{
+					font-family: FontAwesome;
+					color: white;
+					padding: 0.3em;
+					width: 1em;
+					border-radius:100%;
+					background-color: black;
+					top: -0.8em;
+					margin-left: -0.5em;
+					left:50%;
+				}
+			}
+		}
+
+	}
+
+
+
+	/* Grid */
+
+	.resume{
+
+		display: grid;
+		grid-template-columns: 300px auto;
+		grid-template-rows: auto;
+		grid-template-areas:
+			"intro      intro"
+			"contact    contact"
+			"education  about"
+			"technical  experience"
+			"skills  experience"
+			"skills  skillls"
+			"projects  projects";
+
+
+		section.intro{ grid-area: intro; }
+		section.contact{ grid-area: contact; }
+		section.about{ grid-area: about; }
+		section.technical{ grid-area: technical; }
+		section.skills{ grid-area: skills; }
+		section.experience{ grid-area: experience; }
+		section.projects{ grid-area: projects; }
+		section.education{ grid-area: education; }
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
