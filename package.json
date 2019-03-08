@@ -5,14 +5,14 @@
   "main": "app.js",
   "scripts": {
     "dev": "vitreum --dev",
-    "build": "vitreum",
+    "build": "npm run resume && vitreum",
     "lint": "eslint --fix **/*.{js,jsx}",
     "lint:dry": "eslint **/*.{js,jsx}",
     "heroku-postbuild": "npm run build",
     "start": "node app.js",
     "post": "node scripts/newpost.script.js",
-    "resume": "node scripts/resume.script.js",
-    "resume:dev": "nodemon -e md,less scripts/resume.script.js",
+    "resume": "node resume/pdf.script.js",
+    "resume:dev": "nodemon -e md,less resume/pdf.script.js",
     "postinstall": "npm run build"
   },
   "repository": {
@@ -39,13 +39,13 @@
     "pico-router": "^3.2.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "vitreum": "^5.5.2",
-    "wkhtmltopdf": "^0.3.4"
+    "vitreum": "^5.5.2"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
     "eslint": "^5.14.1",
-    "eslint-plugin-react": "^7.12.4"
+    "eslint-plugin-react": "^7.12.4",
+    "puppeteer-core": "^1.13.0"
   },
   "vitreum": {
     "targets": [

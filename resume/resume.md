@@ -33,8 +33,6 @@
 </section>
 
 
-
-
 <section class='technical'>
 
 ## Technical
@@ -68,6 +66,20 @@ Shopify
 
 
 
+<section class='projects'>
+
+## Projects
+
+### vitreum
+
+### homebrewery
+
+### myo.js
+
+</section>
+
+
+
 <section class='experience'>
 
 ## Experience
@@ -76,7 +88,7 @@ Shopify
 ### North _2014 - 2019_
 
 
-#### Fullstack Architect _2018-2019_
+#### Fullstack Architect _2018 - 2019_
 - Made large sweeping decisions over many technical and team based processes
 - Maintained the company's internal tooling for building web solutions
 - Help coordinated the release of the order flow for a complex product, the retail app, marketing website, and the account system for our users
@@ -89,7 +101,7 @@ Shopify
 
 
 
-#### Rapid Prototyper _2016-2018_
+#### Rapid Prototyper _2016 - 2018_
 - Used a wide variety of approaches to test out ideas
 - Worked closely with R&D and shit
 - Developed and helped mature many of the ideas that made it into the final product of Focals
@@ -103,7 +115,7 @@ Shopify
 
 
 
-#### Web Lead _2014-2016_
+#### Web Lead _2014 - 2016_
 - pioneered new frameworks and styles of development for the company.
 - Worked closely with marketting and design to make sure their teams could move quickly.
 
@@ -125,7 +137,7 @@ _2013_
 
 ### Smile.io _2012 - 2014_
 
-#### Lead Front-End Developer
+#### Co-Founder, Lead Front-End Developer
 
 - I lead the design and implement of the user interfaces for all of our new products.
 - Extensive experience with jQuery, Backbone, Prototype, Underscore, as well as many analytic libraries such as Highcharts, Flot, and d3.js.
@@ -143,15 +155,7 @@ _2013_
 
 
 
-<section class='projects'>
 
-## Projects
-
-vitreum
-homebrewery
-myo.js
-
-</section>
 
 
 
