@@ -8,10 +8,8 @@
     "build": "vitreum",
     "lint": "eslint --fix **/*.{js,jsx}",
     "lint:dry": "eslint **/*.{js,jsx}",
-    "heroku-postbuild": "npm run build",
     "start": "node app.js",
-    "post": "node scripts/newpost.script.js",
-    "postinstall": "npm run build"
+    "post": "node scripts/newpost.script.js"
   },
   "repository": {
     "type": "git",
