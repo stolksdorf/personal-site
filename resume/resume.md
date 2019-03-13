@@ -1,3 +1,21 @@
+<!--
+TODO:
+
+
+
+
+
+
+
+
+
+
+
+-->
+
+
+
+
 <section class='intro'>
 
 # Scott Tolksdorf
@@ -13,8 +31,10 @@
 ## Contact
 
 - [scott.tolksdorf@gmail.com](mailto:scott.tolksdorf@gmail.com)
-- [github.com/stolksdorf](https://github.com/stolksdorf)
+<!--- [github.com/stolksdorf](https://github.com/stolksdorf) -->
+- https://stolksdorf.dev
 - (519) 496-3969
+
 
 </section>
 

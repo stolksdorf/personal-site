@@ -3,6 +3,8 @@ const marked = require('marked');
 const Less = require('less');
 const fs = require('fs');
 
+const config = require('../config');
+
 
 const getHtml = async (theme)=>{
 	const Resume = marked(fs.readFileSync('./resume/resume.md', 'utf8'));
@@ -14,12 +16,12 @@ const getHtml = async (theme)=>{
 
 const createPDF = async ()=>{
 	const browser = await puppeteer.launch({
-		executablePath : 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe'
+		executablePath : config.get('chrome_path')
 	});
 	const page = await browser.newPage();
 	await page.setContent(await getHtml('latex'));
 	await page.pdf({
-		//https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagepdfoptions
+		/* https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagepdfoptions */
 		path : 'resume/resume.pdf'
 	})
 	await browser.close();
