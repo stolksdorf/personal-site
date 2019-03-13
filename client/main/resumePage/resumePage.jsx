@@ -1,25 +1,18 @@
 require('./resumePage.less');
-const React       = require('react');
-const createClass = require('create-react-class');
-const cx          = require('classnames');
+const React = require('react');
 
 const resumeText = require('../../../resume/resume.md');
 
 const Markdown = require('shared/markdown.jsx');
 
+//TODO: Break this into a resume component, maybe in shared
+// Should be able to render as static right into the PDF generator
 
 
-const ResumePage = createClass({
-	displayName : 'ResumePage',
-	getDefaultProps(){
-		return {
-		};
-	},
-	render(){
-		return <div className='ResumePage'>
-			<Markdown content={resumeText} />
-		</div>;
-	}
-});
+function ResumePage({ ...props }){
+	return <div className={`ResumePage`} {...props}>
+		<Markdown content={resumeText} />
+	</div>;
+};
 
 module.exports = ResumePage;
