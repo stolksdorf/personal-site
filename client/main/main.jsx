@@ -1,16 +1,18 @@
 require('./main.less');
 const React       = require('react');
+const { Title } = require('vitreum/headtags');
+
+const Footer = require('./footer/footer.jsx');
 
 const Routes = require('shared/routes.js').main;
 
 const {CreateRouter, Link} = require('pico-router');
 
-//const HomePage = require('./homePage/homePage.jsx');
 const HomePage = require('./homePage/homePage.jsx');
 const ResumePage = require('./resumePage/resumePage.jsx');
 const TutoringPage = require('./tutoringPage/tutoringPage.jsx');
 
-const { Title } = require('vitreum/headtags');
+
 
 
 const Router = CreateRouter({
@@ -22,12 +24,12 @@ const Router = CreateRouter({
 });
 
 
-const Main = function({ url }){
+function Main({url='/'}){
 	return <div className='Main'>
 		<Title>Scott Tolksdorf</Title>
 		<nav>nav goes here</nav>
 		<Router defaultUrl={url} />
-		<footer>footer goes here</footer>
+		<Footer />
 	</div>
 }
 

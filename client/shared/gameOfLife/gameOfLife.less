@@ -1,0 +1,43 @@
+
+
+/*
+.fadeIn(@duration : @defaultDuration, @easing : @defaultEasing){
+	.frames(){
+		0%   { opacity: 0; visibility: hidden ;}
+		1%   { opacity: 0; visibility: visible; }
+		100% { opacity: 1; visibility: visible; }
+	}
+	.createAnimation(fadeIn, @duration, @easing, {.frames()});
+}
+.keep(){
+	-webkit-animation-fill-mode:forwards;
+			animation-fill-mode:forwards;
+}
+*/
+
+//@import '../../styles/animations.less';
+.GameOfLife{
+	position            : relative;
+	-webkit-user-select : none;
+	-khtml-user-select  : none;
+	-moz-user-select    : none;
+	-o-user-select      : none;
+	user-select         : none;
+	width : 100%;
+	height : 100%;
+	height : 500px;
+	display: block;
+	.block{
+		//.fadeIn();
+		//.keep();
+		position         : absolute;
+		top              : 50%;
+		left             : 50%;
+		margin           : 2px;
+		//opacity          : 0;
+		background-color : fade(#ddd, 50%);
+		//background-color : #ddd;
+		border-radius    : 3px;
+		pointer-events   : none;
+	}
+}
