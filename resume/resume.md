@@ -10,11 +10,10 @@
 
 
 
+::: temp :::
 
+::: sidebar :::
 
-<div class="temp">
-
-<div class="sidebar">
 
 
 ## Contact
@@ -74,11 +73,10 @@ Custom build system for modern web apps, similar to Webpack. First version 2013,
 -->
 
 
-</div>
+:::
 
 
-<div class='main'>
-
+::: main :::
 
 
 ## About
@@ -191,9 +189,9 @@ _2013_
 
 
 
-</div>
+:::
 
-</div>
+:::
 
 
 
