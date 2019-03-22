@@ -1,35 +1,20 @@
 const ReactDOMServer = require('react-dom/server');
 const React = require('react');
-
-
-
-
 const puppeteer = require('puppeteer-core');
-//const marked = require('marked');
-const md = require('pico-md');
 const Less = require('less');
 const fs = require('fs');
 
-const comp = require('./resume.component.js');
 
+const Resume = require('./resume.component.js');
 const config = require('../config');
-
-const resume = fs.readFileSync('./resume/resume.md', 'utf8')
-
-
-const temp = ReactDOMServer.renderToString(React.createElement(comp, {content : resume}));
-
-console.log(temp);
-
-
 
 
 
 const getHtml = async (theme)=>{
-	const Resume = md(fs.readFileSync('./resume/resume.md', 'utf8'), {allowHtml : true});
+	const content = fs.readFileSync('./resume/resume.md', 'utf8');
 	const style = await Less.render(fs.readFileSync(`./resume/${theme}.less`, 'utf8'), {paths : './resume'});
-	const html = `<html><style type = "text/css">${style.css}</style>
-			<div class='container'><div class='resume ${theme}'>${Resume}</div></div></html>`
+	const html = `<html><style type="text/css">${style.css}</style>
+			<div class='container'>${ReactDOMServer.renderToString(React.createElement(Resume, {content}))}</div></html>`
 	return html;
 };
 

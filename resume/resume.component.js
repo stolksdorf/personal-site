@@ -1,11 +1,10 @@
 const React       = require('react');
 const md = require('pico-md/component');
 
-
 const renderer = {
 	heading : (text, level, raw)=>{
 		if(level == 2){
-			return `</section>\n`
+			return `\n</section>\n`
 				+ `<section class='${text.toLowerCase()}'>\n`
 				+ `<h${level}>${text}</h${level}>\n`
 		}
@@ -17,7 +16,8 @@ const renderer = {
 
 module.exports = ({content})=>{
 	return md({
-		content : content,// + '\n</section>',
+		content : content+ '\n</section>',
+		className : 'resume',
 		options : {
 			renderer,
 			allowHtml : true

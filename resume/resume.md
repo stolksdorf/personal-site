@@ -1,13 +1,11 @@
 
 
-<section class='intro'>
 
 # Scott Tolksdorf
 <!-- ### Director of Special Projects -->
 ### Solution Architect
 
 
-</section>
 
 
 
@@ -18,7 +16,6 @@
 
 <div class="sidebar">
 
-<section class='contact'>
 
 ## Contact
 - ✉️ [scott.tolksdorf@gmail.com](mailto:scott.tolksdorf@gmail.com)
@@ -27,10 +24,8 @@
 <!-- [github.com/stolksdorf](https://github.com/stolksdorf) -->
 <!-- https://stolksdorf.dev -->
 
-</section>
 
 
-<section class='projects'>
 
 ## Notable Projects
 
@@ -44,11 +39,9 @@ Creates authentic looing D&D material using only Markdown. Over 250,000 document
 ### [↗️ vitreum](https://github.com/stolksdorf/vitreum)
 Custom build system for modern web apps, similar to Webpack. First version 2013, predates most modern fullstack build systems, while being feature similar.
 
-</section>
 
 
 
-<section class='technical'>
 
 ## Favourite Tools
 - Zapier/IFTTT
@@ -61,10 +54,8 @@ Custom build system for modern web apps, similar to Webpack. First version 2013,
 - Slackbots
 <!--- Github as a Datastore 😉 -->
 
-</section>
 
 <!--
-<section class='skills'>
 
 ## Skills
 
@@ -80,7 +71,6 @@ Custom build system for modern web apps, similar to Webpack. First version 2013,
 |                    |                   |                 |
 |                    |                   |                 |
 
-</section>
 -->
 
 
@@ -90,7 +80,6 @@ Custom build system for modern web apps, similar to Webpack. First version 2013,
 <div class='main'>
 
 
-<section class='about'>
 
 ## About
 
@@ -109,11 +98,9 @@ Over 10 years professional experience.
 
 Empowers colleagues through mentorship, automation, and strategtic thinking. A builder and tinkerer who aims to continuously improve the lives of those around him.
 
-</section>
 
 
 
-<section class='experience'>
 
 ## Experience
 
@@ -201,7 +188,6 @@ _2013_
 
 
 
-</section>
 
 
 
@@ -215,11 +201,9 @@ _2013_
 
 
 
-<section class='education'>
 
 ## Education
 
 **Bachelor of Computational Mathematics** _2006 to 2011_
 	University of Waterloo, Waterloo, Ontario
 
-</section>
