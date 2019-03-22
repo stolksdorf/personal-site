@@ -1,133 +1,89 @@
 
 @import './resume/resume.base.less';
 @import './resume/latex_fonts.less';
-
 .resume{
-	font-family: 'Latex', serif;
+	display               : grid;
+	font-family           : 'Latex', serif;
+	font-size             : 1.0em;
+	grid-template-columns : 30% auto;
+	grid-template-rows    : auto;
+	grid-column-gap       : 15px;
+	grid-template-areas:
+		"top      top"
+		"contact  experience"
+		"projects experience"
+		"tools    experience"
+		".        experience";
+	section.top       {grid-area:top;}
+	section.contact   {grid-area:contact;}
+	section.projects  {grid-area:projects;}
+	section.tools     {grid-area:tools;}
+	section.about     {grid-area:about;}
+	section.experience{grid-area:experience;}
+	section.education {grid-area:education;}
 
-	font-size : 1.0em;
-	//font-size : 10pt;
-
-
-
-	.temp{
-		display: flex;
-
-		.sidebar{
-			display: inline-block;
-			width : 30%;
-			margin-right: 20px;
-		}
-		.main{
-			display: inline-block;
-			width : 70%;
-			flex-grow:1;
-		}
+	/** Headers **/
+	h1,h2,h3,h4,h5{
+		margin    : 0;
+		font-size : 1em;
+		a{ color : black; }
 	}
-
-
-
 	h1{
-		text-transform: uppercase;
-		text-align: center;
-		margin-bottom: 0px;
-
+		font-size: 1.5em;
+		text-align     : center;
+		text-transform : uppercase;
 		&+h3{
-			font-size: 1em;
-			text-align: center;
-			//display: none;
+			font-size  : 1em;
+			text-align : center;
 		}
 	}
-
-	h2,h3,h4,h5{
-		font-size: 1em;
-		margin: 0;
-		a{
-			color : black;
-		}
-	}
-
-
 	h2{
-		margin-top: 1em;
-		margin-bottom: 0.25em;
-		text-transform: uppercase;
-		border-bottom: 1px solid black;
+		margin-top     : 1em;
+		margin-bottom  : 0.25em;
+		text-transform : uppercase;
+		border-bottom  : 1px solid black;
 	}
 
-
-
-	/*
-	section.contact{
-		h2{ display: none; }
-		ul{
-			display: flex;
-			justify-content: space-around;
-			list-style: none;
-			padding: 0;
-			li{
-				//margin: 0 10px;
-				text-align: center;
-				width: 20%;
-			}
-		}
-	}*/
-
-
-	section.projects{
-		p{
-			margin-bottom: 10px;
-		}
-
-	}
-
-
-
-
+	/** General **/
 	section{
+		padding-left : 8px;
 		h2{
-			margin-left: -8px;
+			margin-left : -8px;
 		}
-		padding-left: 8px;
+	}
+
+
+	/** Section Specific **/
+	section.projects{
+		p{ margin-bottom : 10px; }
 	}
 
 	section.experience{
-
 		h4{
-			padding-left: 1em;
+			padding-left : 1em;
 		}
 		ul{
 			padding-left : 3em;
 		}
 		/* Experience dates */
 		h3 em, h4 em{
-			float: right;
-			font-weight: 500;
-			font-size: 0.8em;
+			float       : right;
+			font-size   : 0.8em;
+			font-weight : 500;
 		}
 	}
-
 	section.contact{
 		ul{
-			list-style: none;
 			padding-left : 0;
+			list-style   : none;
 		}
-	}
-
-
-
-
-
-	/* Hide logos */
-	h3:before{
-		display: none !important;
 	}
 
 	/* Hide sections */
 	section.education{
-		display: none;
+		display : none;
 	}
 	section.about{
-		display: none;
+		display : none;
 	}
 }
