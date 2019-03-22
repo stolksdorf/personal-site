@@ -1,7 +1,8 @@
 require('./resumePage.less');
 const React       = require('react');
 const cx          = require('classnames');
-const Markdown = require('shared/markdown.jsx');
+//const Markdown = require('shared/markdown.jsx');
+const Markdown = require('pico-md/component');
 
 
 
@@ -16,7 +17,7 @@ function ResumePage({ style = 'latex'}){
 	return <div className='ResumePage'>
 
 		<div className='download no-print'>
-			<a href={downloadLinks}> download </a>
+			<a href={downloadLink}> download </a>
 		</div>
 
 

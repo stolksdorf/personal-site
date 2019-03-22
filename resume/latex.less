@@ -5,22 +5,46 @@
 .latex{
 	font-family: 'Latex', serif;
 
-	background-color: red;
+	font-size : 1.0em;
+	//font-size : 10pt;
+
+
+
+	.temp{
+		display: flex;
+
+		.sidebar{
+			display: inline-block;
+			width : 30%;
+			margin-right: 20px;
+		}
+		.main{
+			display: inline-block;
+			width : 70%;
+			flex-grow:1;
+		}
+	}
+
+
 
 	h1{
 		text-transform: uppercase;
 		text-align: center;
+		margin-bottom: 0px;
 
 		&+h3{
 			font-size: 1em;
 			text-align: center;
-			display: none;
+			//display: none;
 		}
 	}
 
 	h2,h3,h4,h5{
 		font-size: 1em;
 		margin: 0;
+		a{
+			color : black;
+		}
 	}
 
 
@@ -33,32 +57,10 @@
 
 
 
-	h4{
-		padding-left: 1em;
-	}
-
-	/* Accomplishments */
-	blockquote{
-		.beforeElement();
-		padding-left: 50px;
-		font-size: 0.8em;
-		margin : 5px 0px;
-		&:before{
-			//background-color: #ddd;
-			background-color: black;
-			top:0px;
-			bottom:0px;
-			width: 1px;
-			left: 43px;
-		}
-	}
-
-
-
+	/*
 	section.contact{
 		h2{ display: none; }
 		ul{
-			background-color: blue;
 			display: flex;
 			justify-content: space-around;
 			list-style: none;
@@ -69,26 +71,52 @@
 				width: 20%;
 			}
 		}
+	}*/
+
+
+	section.projects{
+		p{
+			margin-bottom: 10px;
+		}
+
 	}
 
 
 
-	table{
-		width: 100%;
+
+	section{
+		h2{
+			margin-left: -8px;
+		}
+		padding-left: 8px;
 	}
 
-	//Replace
-	h2 ~ *:not(h2){
-		margin-left: 1em;
+	section.experience{
+
+		h4{
+			padding-left: 1em;
+		}
+		ul{
+			padding-left : 3em;
+		}
+		/* Experience dates */
+		h3 em, h4 em{
+			float: right;
+			font-weight: 500;
+			font-size: 0.8em;
+		}
+	}
+
+	section.contact{
+		ul{
+			list-style: none;
+			padding-left : 0;
+		}
 	}
 
 
-	/* Experience dates */
-	h3 em, h4 em{
-		float: right;
-		font-weight: 500;
-		font-size: 0.8em;
-	}
+
+
 
 	/* Hide logos */
 	h3:before{
@@ -97,6 +125,9 @@
 
 	/* Hide sections */
 	section.education{
+		display: none;
+	}
+	section.about{
 		display: none;
 	}
 }
