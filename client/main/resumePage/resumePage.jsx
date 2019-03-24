@@ -18,6 +18,8 @@ const ResumePage = createClass({
 	render(){
 		return <div className='ResumePage'>
 			<Markdown content={resumeText} />
+
+			asdsad
 		</div>;
 	}
 });

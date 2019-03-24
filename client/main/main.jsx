@@ -14,6 +14,7 @@ const Main = createClass({
 	render(){
 		return <div className='Main'>
 			<ResumePage />
+			this is a test
 		</div>;
 	}
 });

@@ -47,11 +47,11 @@
     "targets": [
       "client/main/main.jsx"
     ],
-    "template": "client/html.template.js",
-    "rootPath": "/personal-site/",
-    "paths" : {
-      "build" : "./docs"
-    }
+    "rootPath" : "/personal-site/",
+    "paths": {
+      "build": "./docs"
+    },
+    "template": "client/html.template.js"
   },
   "babel": {
     "presets": [
