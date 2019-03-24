@@ -4,8 +4,8 @@
   "description": "My own personal website",
   "main": "app.js",
   "scripts": {
-    "dev": "vitreum --dev",
-    "build": "vitreum",
+    "dev": "vitreum --dev --static",
+    "build": "vitreum --static",
     "lint": "eslint --fix **/*.{js,jsx}",
     "lint:dry": "eslint **/*.{js,jsx}",
     "heroku-postbuild": "npm run build",
@@ -47,7 +47,11 @@
     "targets": [
       "client/main/main.jsx"
     ],
-    "template": "client/html.template.js"
+    "template": "client/html.template.js",
+    "rootPath": "/personal-site/",
+    "paths" : {
+      "build" : "./docs"
+    }
   },
   "babel": {
     "presets": [
