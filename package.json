@@ -33,6 +33,7 @@
     "glob": "^7.1.3",
     "pico-conf": "^1.5.1",
     "pico-md": "^1.0.0",
+    "pico-router": "^4.0.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "shortid": "^2.2.14",
