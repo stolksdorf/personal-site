@@ -3,5 +3,6 @@ module.exports={
 	host: "localhost:8000",
 	blog: {
 		show_unpublished : false
-	}
+	},
+	sendgrid_key : ''
 };

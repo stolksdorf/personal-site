@@ -1,7 +1,7 @@
 require('./main.less');
 const React       = require('react');
 
-const Routes = require('shared/routes.js')
+const Routes = require('shared/routes.js').main;
 
 const {CreateRouter, Link} = require('pico-router');
 
