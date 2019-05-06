@@ -1,27 +1,18 @@
 require('./resumePage.less');
 const React       = require('react');
-const createClass = require('create-react-class');
-const cx          = require('classnames');
 
 const resumeText = require('../../../resume/resume.md');
 
-const Markdown = require('shared/markdown.jsx');
+const Markdown = require('pico-md/component.js');
 
 
 
-const ResumePage = createClass({
-	displayName : 'ResumePage',
-	getDefaultProps(){
-		return {
-		};
-	},
-	render(){
-		return <div className='ResumePage'>
-			<Markdown content={resumeText} />
+const ResumePage = function(){
+	return <div className='ResumePage'>
+		<Markdown content={resumeText} />
 
-			asdsad
-		</div>;
-	}
-});
+		asdsad
+	</div>;
+}
 
 module.exports = ResumePage;

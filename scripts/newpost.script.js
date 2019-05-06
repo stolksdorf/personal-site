@@ -1,21 +1,21 @@
 const fse = require('fs-extra');
-const _ = require('lodash');
+const shortid = require('shortid');
+
+const snakeCase = (text)=>text.toLowerCase().replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s/g, '_');
+const titleCase = (text)=>text.replace(/\w\S*/g, (txt)=>txt.charAt(0).toUpperCase()+txt.substr(1).toLowerCase());
 
 const postname = process.argv[2];
 if(!postname){
-	console.log('Usage: npm run-script post [name]');
+	console.log('Usage: npm run-script post "[name]"');
 	process.exit(1);
 }
-const postName = _.snakeCase(postname);
-const PostName = _.startCase(postname);
 
 const file = `---
-title     : ${PostName}
+id        : ${shortid()}
+title     : ${titleCase(postname)}
 desc      : This is a new post
 published : false
-draft     : true
 created   : ${new Date().toISOString().split('T')[0]}
-updated   : ${new Date().toISOString().split('T')[0]}
 tags:
   - js
   - personal
@@ -23,10 +23,10 @@ tags:
   - thoughts
 ---
 
-# ${PostName}
+# ${titleCase(postname)}
 
 `;
 
-fse.outputFileSync(`./posts/${postName}.md`, file);
+fse.outputFileSync(`./posts/${snakeCase(postname)}.md`, file);
 
-console.log('Created!');
+console.log('Created!', `./posts/${snakeCase(postname)}.md`);
