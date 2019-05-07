@@ -6,206 +6,163 @@ const reduce = (obj,fn,init)=>Object.keys(obj).reduce((acc, key, idx)=>{return f
 
 require('./gameOfLife.less');
 const React       = require('react');
-const createClass = require('create-react-class');
 //const _           = require('lodash');
 
 /** Common Game Of Life Generators **/
+
+function Glider(){return null;}
+function Cross(){return null;}
+function Square(){return null;}
+function Line(){return null;}
+
+
 const generators = {
-	glider : (x = 0, y = 0, dir = 1) => [
+	[Glider] : ({x = 0, y = 0, dir = 1}) => [
 		[x + (2 * dir), y + 0],
 		[x + (1 * dir), y + 0],
 		[x + (0 * dir), y + 0],
 		[x + (1 * dir), y + 2],
 		[x + (0 * dir), y + 1],
 	],
-	cross : (x = 0, y = 0) => [
+	[Cross] : ({x = 0, y = 0}) => [
 		[x + 0, y + 0],
 		[x + 1, y + 0],
 		[x + 1, y + 1],
 		[x + 2, y + 0],
 		[x + 1, y - 1],
 	],
+	[Square] : ({x = 0, y = 0}) => [
+		[x + 0, y + 0],
+		[x + 1, y + 0],
+		[x + 0, y + 1],
+		[x + 1, y + 1],
+	],
+	[Line] : ({x = 0, y = 0}) => [
+		[x + 0, y + 0],
+		[x + 1, y + 0],
+		[x + 2, y + 0],
+	],
 };
 
 
+/* ------------------- */
 
+const toCoord = (val)=>{
+	const [x,y] = val.split(',');
+	return {x:Number(x),y:Number(y)};
+}
+const fromCoord = (obj)=>`${obj.x},${obj.y}`;
+const neighbourMap = ({x,y},fn)=>{
+	[-1,0,1].map((dx)=>{
+		[-1,0,1].map((dy)=>{
+			fn({x:x+dx, y:y+dy})
+		})
+	});
+};
+const getNeighbourCount=(set, coord)=>{
+	let acc = 0;
+	neighbourMap(coord, (_coord)=>{
+		acc += (exists(set, _coord) ? 1 : 0)
+	}, 0)
+	return acc - (exists(set, coord) ? 1 : 0)
+};
 
-const neighbourMap = (coord,fn)=>{
-	const arr = [-1,0,1];
-	let res = [];
-	arr.map((dx)=>arr.map((dy)=>res.push(fn({x:x+dx, y:y+dy}))));
+const exists  = (set, coord)=>set.has(fromCoord(coord));
+const kill    = (set, coord)=>{set.delete(fromCoord(coord)); return set;};
+const grow    = (set, coord)=>set.add(fromCoord(coord));
+const update  = (set, coord, val)=>val ? grow(set,coord) : kill(set,coord);
+//const all     = (set)=>Array.from(set).map(toCoord);
+
+const step = (set)=>{
+	let res = new Set();
+	Array.from(set).map((key)=>{
+		const pivotCoord = toCoord(key);
+		neighbourMap(pivotCoord, (coord)=>{
+			const count = getNeighbourCount(set, coord);
+			const isAlive = exists(set, coord);
+			if(!isAlive && count == 3) res = grow(res, coord);
+			if(isAlive && (count == 2 || count == 3)) res = grow(res, coord);
+		});
+	})
 	return res;
 };
 
+/* --------------------- */
 
 
-const gol = ()=>{
-	const coord = (val)=>{
-		const [x,y] = val.split(',');
-		return {x,y};
+
+
+const useClickDrag = (func)=>{
+	const [clicked, setClick] = React.useState(false);
+	return {
+		onMouseDown : (evt)=>{setClick(true); func(evt, true);},
+		onMouseUp   : ()=>setClick(false),
+		onMouseMove : (evt)=>clicked && func(evt),
 	}
-	const getNeighbourCount=(coord)=>{
-		let count = 0;
-		neighbourMap(coord, (coord)=>{
-			if(gol.get(coord)) count++;
+};
+
+const processChildren = (children)=>{
+	if(!Array.isArray(children)) children = [children];
+	return children.reduce((acc, child)=>{
+		if(generators[child.type]) return acc.concat(generators[child.type](child.props));
+		return acc;
+	}, []).map(([x,y])=>fromCoord({x,y}));
+};
+
+let timer;
+
+function GameOfLife({pixelSize=15, delay=2000, children}){
+	const [cells, setCells] = React.useState(new Set(processChildren(children)));
+	const updateCells = (set)=>setCells(new Set(set));
+	const executeStep = ()=>updateCells(step(cells));
+
+	// React.useEffect(()=>{
+	// 	const timer = setInterval(()=>executeStep(), delay);
+	// 	return ()=>clearInterval(timer);
+	// });
+
+	if(!timer) timer = setInterval(()=>global.step(), delay);
+
+	const renderCells = ()=>{
+		return Array.from(cells).map((key)=>{
+			const {x,y} = toCoord(key);
+			return <div
+				key={`${x}-${y}`}
+				className='cell'
+				style={{
+					transform : `translate(${x * pixelSize}px, ${y * pixelSize}px)`,
+					height    : `${pixelSize - 1}px`,
+					width     : `${pixelSize - 1}px`,
+				}} />;
 		});
-		return count;
 	};
 
 
-	const gol = {
-		state : new Set(),
-		get : ({x,y})=>state.has(`${x},${y}`),
-		set : (x,y,val)=>{
-			val
-				? gol.state.add(`${x},${y}`)
-				: gol.state.delete(`${x},${y}`);
-		},
-		all : ()=>gol.state.values.map(coord),
-		step : ()=>{
-			let res = new Set();
-
-			gol.all().map((coord)=>{
-
-			})
-
-			gol.state.values().map(()=>{
-
-			})
-			Array.from(gol.state).each(())
-
-
-		},
-
-		flip : (x, y)=>{
-			gol.set(x,y,!gol.get(x,y));
-		},
-		toggleCell : (x,y)=>{
-
-		}
+	const ref = React.useRef();
+	const getPos = (evt)=>{
+		const x = Math.floor((evt.nativeEvent.offsetX - ref.current.offsetWidth / 2) / pixelSize);
+		const y = Math.floor((evt.nativeEvent.offsetY - ref.current.offsetHeight / 2) / pixelSize);
+		return {x,y};
 	}
-	return gol;
+
+	global.step = ()=>updateCells(step(cells));
+
+	const [lastCellState, setLastCellState] = React.useState(false);
+	const dragEvents = useClickDrag((evt, onDown)=>{
+		const coord = getPos(evt);
+		if(onDown) setLastCellState(!exists(cells, coord));
+		updateCells(update(cells, coord, lastCellState));
+	});
+
+	return <div className='GameOfLife' ref={ref} {...dragEvents}>
+		{renderCells()}
+	</div>
+};
+
+module.exports = {
+	GameOfLife,
+	Glider,
+	Cross,
+	Square,
+	Line,
 }
-
-
-
-
-
-const GameOfLife = createClass({
-	getDefaultProps : function(){
-		return {
-			delay      : 800,
-			pixelSize  : 15,
-			initialMap : generators.glider(0, 0),
-		};
-	},
-	getInitialState : function() {
-		return {
-			clicked : false,
-			map     : reduce(this.props.initialMap, (acc, coord) => {
-				acc[`${coord[0]},${coord[1]}`] = true;
-				return acc;
-			}, {}),
-		};
-	},
-	componentDidMount : function() {
-		setInterval(() => this.iterate(), this.props.delay);
-	},
-	iterate : function() {
-		const kill = (state, x, y) => {
-			delete state[`${x},${y}`];
-			return state;
-		};
-		const live = (state, x, y) => {
-			state[`${x},${y}`] = true;
-			return state;
-		};
-		const read = (state, x, y) => state[`${x},${y}`];
-		const get = (key) => {
-			const [x, y] = key.split(',');
-			return { x: x * 1, y: y * 1 };
-		};
-
-		const getNeighbourCount = (state, x, y) => {
-			return neighbourReduce(state, x, y, (acc, status, cx, cy) => {
-				if(cx == x && cy == y) return acc;
-				if(status) return acc + 1;
-				return acc;
-			}, 0);
-		};
-
-		// FIXME: Cleanup the number of params
-		const neighbourReduce = (state, x, y, fn, acc) => {
-			return reduce([-1, 0, 1], (acc, modx) => {
-				return reduce([-1, 0, 1], (acc, mody) => {
-					return fn(acc, read(state, x + modx, y + mody), x + modx, y + mody);
-				}, acc);
-			}, acc);
-		};
-
-		const calcBlock = (state, newState, x, y) => {
-			const count = getNeighbourCount(state, x, y);
-			const status = read(state, x, y);
-			if(count < 2 || count > 3) newState = kill(newState, x, y);
-			if(count == 3 && !status) newState = live(newState, x, y);
-			return newState;
-		};
-
-		//let newState = clone(this.state.map);
-		let newState = this.state.map;
-
-		newState = reduce(this.state.map, (acc, val, key) => {
-			const { x, y } = get(key);
-			return neighbourReduce(acc, x, y, (acc, status, cx, cy) => {
-				// TODO: add conditional on new state to check agsint doing logic
-				// TODO: Add bounds check so it dones;t run off into infitity
-				return  calcBlock(this.state.map, acc, cx, cy);
-			}, acc);
-
-		}, newState);
-		this.setState({ map: newState });
-	},
-
-	clickMap : function(evt) {
-		console.log('yo');
-		const x = Math.floor((evt.nativeEvent.offsetX - this.refs.gameOfLife.offsetWidth / 2) / this.props.pixelSize);
-		const y = Math.floor((evt.nativeEvent.offsetY - this.refs.gameOfLife.offsetHeight / 2) / this.props.pixelSize);
-
-		this.state.map[`${x},${y}`] = !this.state.map[`${x},${y}`];
-		this.setState(this.state);
-	},
-
-	handleMouseMove : function(evt) {
-		if(!this.state.clicked) return;
-		this.clickMap(evt);
-	},
-	renderBlocks : function() {
-		const size = this.props.pixelSize;
-		return map(this.state.map, (val, key) => {
-			const [x, y] = key.split(',');
-			return <div
-				key={key}
-				className='block'
-				style={{
-					transform : `translate(${x * size}px, ${y * size}px)`,
-					height    : `${size - 1}px`,
-					width     : `${size - 1}px`,
-				}} />;
-		});
-	},
-
-	render : function(){
-		return <div className='GameOfLife'
-			onMouseDown={(evt) => {this.clickMap(evt);this.setState({ clicked: true });}}
-			onMouseUp={() => this.setState({ clicked: false })}
-			onMouseMove={this.handleMouseMove}
-			ref='gameOfLife'>
-			{this.renderBlocks()}
-		</div>;
-	},
-});
-
-GameOfLife.gen = generators;
-
-
-module.exports = GameOfLife;

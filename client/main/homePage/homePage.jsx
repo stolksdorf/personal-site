@@ -50,7 +50,9 @@ const buttons = [
 
 //https://nicepage.com/doc/article/20348/web-design-3-0-when-your-web-design-really-matters
 
-//const GameOfLife = require('shared/gameOfLife/gameOfLife.jsx');
+const {GameOfLife, Glider, Line, Square} = require('shared/gameOfLife/gameOfLife.jsx');
+
+
 
 function HomePage(){
 	return <div className={`HomePage`}>
@@ -86,7 +88,19 @@ function HomePage(){
 					</Link>
 				})}
 			</div>
+
+			<GameOfLife delay={800} pixelSize={12}>
+				<Line y={40}/>
+				<Glider x={5} y={20} dir={-1} />
+
+				<Glider x={20} y={35} dir={1} />
+
+				<Square x={-15} y={30} dir={-1} />
+
+			</GameOfLife>
 		</div>
+
+
 
 
 		{/*<Footer />*/}
