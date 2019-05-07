@@ -13,8 +13,6 @@ const ResumePage = require('./resumePage/resumePage.jsx');
 const TutoringPage = require('./tutoringPage/tutoringPage.jsx');
 
 
-
-
 const Router = CreateRouter({
 	[Routes.home] : <HomePage />,
 	//[Routes.home] : <div>HOME  <Link href={Routes.resume}>Resume</Link></div>,
@@ -25,11 +23,10 @@ const Router = CreateRouter({
 
 
 function Main({url='/'}){
+	console.log('rendering');
 	return <div className='Main'>
 		<Title>Scott Tolksdorf</Title>
-		<nav>nav goes here</nav>
 		<Router defaultUrl={url} />
-		<Footer />
 	</div>
 }
 

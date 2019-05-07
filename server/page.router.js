@@ -10,6 +10,6 @@ router.get(Object.values(Routes.main), (req, res) => {
 	}));
 });
 
-router.get('*', (req, res)=>res.redirect(Routes.notFound));
+router.get('*', (req, res)=>res.redirect(Routes.main.notFound));
 
 module.exports = router;

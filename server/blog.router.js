@@ -2,8 +2,9 @@ const router = require('express').Router();
 const blogRenderer = require('../build/blog/render.js');
 const Blog = require('./blog.service.js');
 
+const Routes = require('../client/shared/routes.js');
 
-router.get(['/blog/:blog_id', '/blog/:blog_id/*'], (req, res) => {
+router.get([`${Routes.main.blog}/:blog_id`, `${Routes.main.blog}/:blog_id/*`], (req, res) => {
 	console.log(req.params.blog_id);
 	console.log(Blog.get(req.params.blog_id));
 
@@ -16,7 +17,7 @@ router.get(['/blog/:blog_id', '/blog/:blog_id/*'], (req, res) => {
 });
 
 
-router.get('/blog', (req, res) => {
+router.get(`${Routes.main.blog}`, (req, res) => {
 	const posts = (req.query.tag)
 		? Blog.byTag(req.query.tag)
 		: Blog.summaries();
