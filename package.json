@@ -11,7 +11,8 @@
     "start": "node app.js",
     "post": "node scripts/newpost.script.js",
     "blog": "node scripts/newpost.script.js",
-    "postinstall": "npm run build"
+    "heroku": "open https://dashboard.heroku.com/apps/stolksdorf-site",
+    "logs": "heroku logs --app=stolksdorf-site -t"
   },
   "repository": {
     "type": "git",

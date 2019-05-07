@@ -8,7 +8,7 @@ router.get(Object.values(Routes.main), (req, res) => {
 	return res.send(mainRenderer({
 		url : req.url
 	}));
-});
+}, {cache:true});
 
 router.get('*', (req, res)=>res.redirect(Routes.main.notFound));
 
