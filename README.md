@@ -2,11 +2,15 @@
 My own personal website
 
 
-http://kartikt.com/
 
+### TODO
+- Add meta tags
+- Make better buttons
+- Design blog style
+- Add quicklinks off to the side bar
+- Mobile styles
+- Come up with tags lines?
 
-- Use the old paintjob styling to auto-gen project pages. Dyanmically query the package.json and readme files for each project listed within
-- Have a folder for blog posts, Can I embed meta data within blog post readmes?
-- Move my old gists, white papers, and whatnot to the web
-- Use github pages or heroku?
-- Move resume over, make it printable?
+- Add an about me
+- a Projects page?
+- Add a page slider things with the router for the smol pages
