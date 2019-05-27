@@ -1,5 +1,5 @@
 require('./gameOfLife.less');
-const React       = require('react');
+const React = require('react');
 
 const Generators = require('./generators.js');
 const Engine = require('./gol.engine.js');

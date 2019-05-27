@@ -23,7 +23,6 @@ const Router = CreateRouter({
 
 
 function Main({url='/'}){
-	console.log('rendering');
 	return <div className='Main'>
 		<Title>Scott Tolksdorf</Title>
 		<Router defaultUrl={url} />
