@@ -16,6 +16,34 @@ const buttons = require('./buttons.js')
 
 
 
+
+
+
+
+
+const Verbs = [
+	'build',
+	'design',
+	'architct',
+	'create',
+	'cobble together',
+	'ship'
+];
+
+const Projects = [
+	'Slack Bots',
+	'D&D Tools',
+	'Nerdy Things',
+
+
+]
+
+
+
+
+
+
+
 const {GameOfLife, Glider, Line, Square} = require('shared/gameOfLife/gameOfLife.jsx');
 function GOL(){
 	return <GameOfLife delay={800} pixelSize={12}>
@@ -30,10 +58,17 @@ function GOL(){
 
 function Button({icon, color, text, ...props}){
 
-	return <button {...props} key={text}>
+	return <button className='hint--bottom-right' {...props} key={text} aria-label='test this is a longer piece of text'>
 		<i className={`fa fa-fw fa-${icon}`} />
 		<span>{text}</span>
 	</button>
+
+}
+
+function Subheader(){
+	return <p>
+		I Build Things
+	</p>
 
 }
 
@@ -45,10 +80,10 @@ function HomePage(){
 
 			<header>
 				<div className='card' style={{backgroundColor : Colors['red']}}>
-					<i className='fa fa-fw fa-rocket' />
+					<i className='fa fa-fw fa-ship' />
 				</div>
 				<h1>Scott Tolksdorf</h1>
-				<p>Really good at stuff</p>
+				<Subheader />
 
 				<div className='buttons'>
 					{buttons.map(Button)}
@@ -61,6 +96,8 @@ function HomePage(){
 
 		</div>
 
+
+	<GOL />
 
 
 
