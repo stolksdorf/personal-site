@@ -11,7 +11,7 @@ module.exports = {
 	env : {
 		browser : true,
 	},
-	plugins : ['react'],
+//	plugins : ['react'],
 	rules   : {
 		/** Errors **/
 		'camelcase'              : ['error', { properties: 'never' }],
