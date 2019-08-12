@@ -1,140 +1,107 @@
-
-// button.red{ border-color:@red; i{color:@red;} .slide{background-color: @red;} }
-// button.teal{ border-color:@teal; i{color:@teal;} .slide{background-color: @teal;} }
-// button.green{ border-color:@green; i{color:@green;} .slide{background-color: @green;} }
-// button.blue{ border-color:@blue; i{color:@blue;} .slide{background-color: @blue;} }
-// button.steel{ border-color:@steel; i{color:@steel;} .slide{background-color: @steel;} }
-// button.purple{ border-color:@purple; i{color:@purple;} .slide{background-color: @purple;} }
-// button.orange{ border-color:@orange; i{color:@orange;} .slide{background-color: @orange;} }
-
-
 .HomePage{
-
-
 	header{
-		font-size: 3em;
-		display: grid;
-		grid-column-gap: 15px;
-		grid-row-gap: 25px;
-		max-width: 4em;
+		display             : grid;
+		max-width           : 6em;
+		font-size           : 3em;
+		grid-column-gap     : 15px;
+		grid-row-gap        : 25px;
 		//border : 1px solid black;
-
-
 		grid-template-areas:
-			"card title"
-			".    subtitle"
-			".    buttons";
-
+		"card title"
+		".    subtitle"
+		".    buttons";
 		//margin-top: 50px;
 		//margin-left: 50px;
-
-
 		.card{ //double line
 			font-size : 2.5em;
 		}
-
 		.card{
-
-			@size: 1.6em;
-			grid-area: card;
-			color: white;
-			background-color: @blue;
-			text-align: center;
-			display: inline-block;
-			padding: 0;
-			width: @size;
-			height: @size;
+			@size            : 1.6em;
+			display          : inline-block;
+			height           : @size;
+			width            : @size;
+			padding          : 0;
+			background-color : @blue;
+			color            : white;
 			//line-height: 4.5em;
-			line-height: @size;
+			line-height      : @size;
+			text-align       : center;
+			grid-area        : card;
+			justify-self     : end;
 			i{
-				font-size: 1em;
+				font-size : 1em;
 			}
-			justify-self: end;
 		}
-
 		h1{
-			grid-area: title;
-			font-family: 'Lato';
-			font-weight: 900;
-			font-size: 2.6em;
-			font-weight: 900;
-			line-height: 0.8em;
+			font-family : 'Lato';
+			font-size   : 2.6em;
+			font-weight : 900;
+			font-weight : 900;
+			line-height : 0.8em;
+			grid-area   : title;
 		}
 		p{
-			font-family: 'Lato';
-			font-weight: 400;
-			grid-area : subtitle;
+			font-family : 'Lato';
 			//font-size: 0.5em;
-			font-size: 1.0em;
-			font-weight: 400;
+			font-size   : 1.0em;
+			font-weight : 400;
+			font-weight : 400;
+			grid-area   : subtitle;
 		}
-
 		.buttons{
-			grid-area: buttons;
-			//display: flex;
-			max-width: 360px;
+			width : 800px;
+			//max-width : 360px;
+			grid-area : buttons;
+			display: flex;
+			flex-wrap:wrap;
 
-			button{
-				background: @blue;
-				color : white;
-				outline: none;
-				border : none;
-				cursor: pointer;
-				padding : 0;
-			//	display: flex;
-				flex-grow: 0;
+			font-size: 0.5em;
 
-				&::after{
-					font-weight: 900;
-				}
 
-				margin : 20px;
+			.slideButton(@color : @blue){
+				width : 8em;
+				display                 : flex;
+				margin                  : 0.5em;
+				cursor                  : pointer;
+				background-image        : linear-gradient(to right, @color 50%, white 50%), linear-gradient(to right, white 50%, @color 50%);
+				background-position     : 1.4em 0;
+				background-clip         : text, border-box;
+				background-size         : 200% 100%;
+				color                   : transparent;
+				text-align              : center;
+				border                  : 2px solid @color;
+				transition              : background-position 0.25s ease;
 
-				//border : 1px solid red;
-				text-align: left;
-
-				line-height: 2em;
-
+				-webkit-background-clip : text, border-box;
+				align-items             : center;
 				span{
-					text-align: center;
-					//margin-left: 10px;
-					font-size: 24px;
+					background-clip         : text, border-box;
+					text-align              : center;
+					-webkit-background-clip : text, border-box;
+					flex-grow               : 1;
 				}
-
-				width : 180px;
-
-				transition: all 0.25s;
-
-
-
-				i{
-					font-size: 1.8em;
-					background-color:@blue;
-					color: white;
-					height : 2em;
-					width : 2em;
-					line-height: 2em;
-				}
-
 				&:hover{
-					background-color: @blue;
-					color : white;
+					background-position : -100% 0;
 				}
-
+			}
+			.button{
+				&.teal{ .slideButton(@teal); }
+				&.steel{ .slideButton(@steel); }
+				&.orange{ .slideButton(@orange); }
+				&.purple{ .slideButton(@purple); }
+				&.blue{ .slideButton(@blue); }
+				&.red{ .slideButton(@red); }
 			}
 		}
-
 	}
-
-
-
 	.GameOfLife{
-		position: absolute;
-		top:0;
-		left:0;
-		right:0;
-		bottom:0;
-		z-index : -1;
+		position : absolute;
+		top      : 0;
+		right    : 0;
+		bottom   : 0;
+		left     : 0;
+		z-index  : -1;
+		overflow : hidden;
 		.cell{
 			z-index : 10
 		}

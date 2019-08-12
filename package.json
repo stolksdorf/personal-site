@@ -26,8 +26,8 @@
   },
   "homepage": "https://github.com/stolksdorf/personal-site#readme",
   "dependencies": {
-    "@babel/core": "^7.3.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@sendgrid/mail": "^6.3.1",
     "body-parser": "^1.18.3",
@@ -37,8 +37,8 @@
     "pico-conf": "^1.5.1",
     "pico-md": "^1.0.0",
     "pico-router": "^4.0.0",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "shortid": "^2.2.14",
     "superagent": "^5.0.2",
     "vitreum": "^5.7.1"

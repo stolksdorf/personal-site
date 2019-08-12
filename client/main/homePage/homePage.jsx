@@ -34,8 +34,6 @@ const Projects = [
 	'Slack Bots',
 	'D&D Tools',
 	'Nerdy Things',
-
-
 ]
 
 
@@ -56,7 +54,13 @@ function GOL(){
 
 
 
-function Button({icon, color, text, ...props}){
+function Button({icon, color, text, href, ...props}){
+
+	return <Link className={`button ${color}`} href={href} key={text}>
+		<i className={`fa fa-fw fa-${icon}`} />
+		<span>{text}</span>
+
+	</Link>
 
 	return <button className='hint--bottom-right' {...props} key={text} aria-label='test this is a longer piece of text'>
 		<i className={`fa fa-fw fa-${icon}`} />
@@ -75,31 +79,19 @@ function Subheader(){
 
 function HomePage(){
 	return <div className={`HomePage`}>
-
 		<div className='content'>
-
 			<header>
 				<div className='card' style={{backgroundColor : Colors['red']}}>
 					<i className='fa fa-fw fa-ship' />
 				</div>
 				<h1>Scott Tolksdorf</h1>
 				<Subheader />
-
 				<div className='buttons'>
 					{buttons.map(Button)}
 				</div>
-
 			</header>
-
-
-
-
 		</div>
-
-
-	<GOL />
-
-
+		<GOL />
 
 	</div>;
 };
