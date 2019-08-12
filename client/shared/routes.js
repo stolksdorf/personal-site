@@ -4,7 +4,7 @@ module.exports = {
 		resume : '/resume',
 		tutoring : '/tutoring',
 		mentorship : '/tutoring',
-		notFound : '/404',
+		notFound : '/oops',
 
 		blog : '/blog'
 	},
