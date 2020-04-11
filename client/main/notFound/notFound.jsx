@@ -16,7 +16,7 @@ function Spin({children, speed=400, delay=2000, ...props}){
 	}
 
 	React.useEffect(()=>{
-		setTimeout(go, 4000);
+		setTimeout(go, delay);
 	}, [])
 	return <div className='spin' onMouseEnter={go} style={{
 		display : 'inline-block',
@@ -28,7 +28,7 @@ function Spin({children, speed=400, delay=2000, ...props}){
 };
 
 function Breakpart({text, ...props}){
-	return text.split('').map((letter, idx)=><Spin {...props} key={idx}>{letter}</Spin>);
+	return text.split('').map((letter, idx)=><Spin {...props} key={idx} >{letter}</Spin>);
 }
 
 
