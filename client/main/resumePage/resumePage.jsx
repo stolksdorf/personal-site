@@ -10,6 +10,7 @@ const Markdown = require('pico-md/component.js');
 // Should be able to render as static right into the PDF generator
 
 const ResumePage = function(){
+	console.log(resumeText);
 	return <div className='ResumePage'>
 		<Markdown content={resumeText} />
 	</div>;
