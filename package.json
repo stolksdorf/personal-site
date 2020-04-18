@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node scripts/build.script.js --dev",
     "build": "node scripts/build.script.js",
-    "pdf": "node scripts/pdf.script.js",
+    "resume": "node scripts/resume.script.js",
     "lint": "eslint --fix **/*.{js,jsx}",
     "lint:dry": "eslint **/*.{js,jsx}",
     "start": "node app.js",
@@ -43,7 +43,8 @@
   "devDependencies": {
     "babel-eslint": "^10.0.1",
     "eslint": "^5.14.1",
-    "eslint-plugin-react": "^7.12.4"
+    "eslint-plugin-react": "^7.12.4",
+    "puppeteer-core": "^3.0.0"
   },
   "eslintIgnore": [
     "build/*",

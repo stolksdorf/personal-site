@@ -12,11 +12,12 @@ router.get(Object.values(Routes.main), (req, res) => {
 		url : req.url
 	});
 
-	//console.log(body)
-
-	//TODO: add in fontaweesome
 	return res.send(html({
-		head : `<link href='/bundle.css' rel='stylesheet'></link>\n${headtags.generate()}`,
+		head : `
+			<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'></link>
+			<link href='/bundle.css' rel='stylesheet'></link>
+			${headtags.generate()}
+		`,
 		body,
 		tail : `<script src='/bundle.js'></script>`,
 	}));

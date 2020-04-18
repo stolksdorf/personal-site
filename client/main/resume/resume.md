@@ -3,6 +3,9 @@
 # Scott Tolksdorf
 ### Solution Architect
 
+</section>
+
+<section class="contact">
 
 ## Contact
 - ✉️ [scott.tolksdorf@gmail.com](mailto:scott.tolksdorf@gmail.com)
@@ -10,7 +13,10 @@
 <!-- - 🌐 [stolksdorf.dev](https://stolksdorf.dev) -->
 - 📞 (519) 496-3969
 
+</section>
 
+
+<section class="projects">
 
 ## Notable Projects
 
@@ -25,7 +31,10 @@ Creates authentic looing D&D material using only Markdown. Over 250,000 document
 Custom build system for modern web apps, similar to Webpack. First version 2013, predates most modern fullstack build systems, while being feature similar.
 
 
+</section>
 
+
+<section class="tools">
 
 ## Favourite Tools
 - Zapier/IFTTT
@@ -36,9 +45,11 @@ Custom build system for modern web apps, similar to Webpack. First version 2013,
 - Coda.io
 - Heroku
 - Slackbots
-
+</section>
 
 <!--
+
+<section class="about">
 
 ## About
 
@@ -56,14 +67,25 @@ Scott is a technical pioneer, who makes what he doesn't have access to and autom
 Over 10 years professional experience.
 
 Empowers colleagues through mentorship, automation, and strategtic thinking. A builder and tinkerer who aims to continuously improve the lives of those around him.
+</section>
 -->
 
 
 
 
+<section class="experience">
+
 ## Experience
 
-### North _2014 - 2019_
+### [Bungalow](https://bungalow.com/) _2019 - 2020_
+
+#### Solution Architect
+- Productized the company's pricing strategy into a high-performance service; allowing key metrics to be monitored and updated via machine learning, leading to the creation of our data science team.
+- Automated key parts of our acquisiton funnel, allowing our team to greatly increase the size and quality of our funnel without needing to make additional hires
+- Implemented a service and source of truth for locations and geofences. Used by marketting, data science, engineering, and pricing teams to automate their workflows.
+
+
+### [North](https://www.bynorth.com/) _2014 - 2019_
 
 #### Fullstack Architect <!-- _2018 - 2019_ -->
 - Onboarded 4 new developers, including extensive code reviews and 1-on-1 mentoring.
@@ -95,7 +117,7 @@ Empowers colleagues through mentorship, automation, and strategtic thinking. A b
 -->
 
 
-### Smile.io _2012 - 2014_
+### [Smile.io](https://smile.io/) _2012 - 2014_
 
 #### Co-Founder, Lead Front-End Developer
 - Implemented the rules engine for our points system that handled millions of e-commerce transactions.
@@ -104,9 +126,14 @@ Empowers colleagues through mentorship, automation, and strategtic thinking. A b
 - Built a tool that hybridized both Backbone and Prototype MVC frameworks, allowing our system to easily adapt with different client-side environments with minimal code change.
 
 
+</section>
+
 <!--
+<section class="education">
+
 ## Education
 
 **Bachelor of Computational Mathematics** _2006 to 2011_
 	University of Waterloo, Waterloo, Ontario
+</section>
 -->
