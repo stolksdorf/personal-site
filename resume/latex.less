@@ -1,0 +1,81 @@
+
+@import './resume/resume.base.less';
+@import './resume/latex_fonts.less';
+.resume{
+	display               : grid;
+	font-family           : 'Latex', serif;
+	font-size             : 1.0em;
+	grid-template-columns : 30% auto;
+	grid-template-rows    : auto;
+	grid-column-gap       : 15px;
+	grid-template-areas:
+		"top      top"
+		"contact  experience"
+		"projects experience"
+		"tools    experience"
+		".        experience";
+	section.top       {grid-area:top;}
+	section.contact   {grid-area:contact;}
+	section.projects  {grid-area:projects;}
+	section.tools     {grid-area:tools;}
+	section.about     {grid-area:about;}
+	section.experience{grid-area:experience;}
+	section.education {grid-area:education;}
+
+	/** Headers **/
+	h1,h2,h3,h4,h5{
+		margin    : 0;
+		font-size : 1em;
+		a{ color : black; }
+	}
+	h1{
+		font-size: 1.5em;
+		text-align     : center;
+		text-transform : uppercase;
+		&+h3{
+			font-size  : 1em;
+			text-align : center;
+		}
+	}
+	h2{
+		margin-top     : 1em;
+		margin-bottom  : 0.25em;
+		text-transform : uppercase;
+		border-bottom  : 1px solid black;
+	}
+
+	/** General **/
+	section{
+		padding-left : 8px;
+		h2{
+			margin-left : -8px;
+		}
+	}
+
+
+	/** Section Specific **/
+	section.projects{
+		p{ margin-bottom : 10px; }
+	}
+
+	section.experience{
+		h4{
+			padding-left : 1em;
+		}
+		ul{
+			padding-left : 3em;
+		}
+		/* Experience dates */
+		h3 em, h4 em{
+			float       : right;
+			font-size   : 0.8em;
+			font-weight : 500;
+		}
+	}
+	section.contact{
+		ul{
+			padding-left : 0;
+			list-style   : none;
+		}
+	}
+}
