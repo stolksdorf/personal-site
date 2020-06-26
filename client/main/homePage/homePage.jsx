@@ -44,7 +44,7 @@ const Projects = [
 
 const {GameOfLife, Glider, Line, Square} = require('shared/gameOfLife/gameOfLife.jsx');
 function GOL(){
-	return <GameOfLife delay={800} pixelSize={12}>
+	return <GameOfLife delay={200} pixelSize={12}>
 		<Line y={40}/>
 		<Glider x={5} y={20} dir={-1} />
 		<Glider x={20} y={35} dir={1} />
@@ -77,22 +77,43 @@ function Subheader(){
 }
 
 
+const links = [
+	// {
+	// 	text : "About",
+	// 	url : Routes.main.about,
+	// },
+	{
+		text : "Resume",
+		url : Routes.main.resume,
+	},
+	// {
+	// 	text : "Blog",
+	// 	url : Routes.main.blog,
+	// },
+	// {
+	// 	text : "Projects",
+	// 	url : Routes.main.projects,
+	// },
+	{
+		text : "Github",
+		url : Routes.external.github
+	},
+
+
+]
+
+
 function HomePage(){
 	return <div className={`HomePage`}>
 		<div className='content'>
-			<header>
-				<div className='card' style={{backgroundColor : Colors['red']}}>
-					<i className='fa fa-fw fa-ship' />
-				</div>
-				<h1>Scott Tolksdorf</h1>
-				<Subheader />
-				<div className='buttons'>
-					{buttons.map(Button)}
-				</div>
-			</header>
+			<h1>Scott Tolksdorf</h1>
+			<nav>
+				{links.map(({text, url})=>{
+					return <Link href={url} key={text}>{text}</Link>
+				})}
+			</nav>
 		</div>
 		<GOL />
-
 	</div>;
 };
 

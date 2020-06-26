@@ -12,7 +12,7 @@
     "start": "node app.js",
     "post": "node scripts/newpost.script.js",
     "blogs": "node scripts/posts.script.js",
-    "heroku": "open https://dashboard.heroku.com/apps/stolksdorf-site",
+    "heroku": "start https://dashboard.heroku.com/apps/stolksdorf-site",
     "logs": "heroku logs --app=stolksdorf-site -t"
   },
   "repository": {

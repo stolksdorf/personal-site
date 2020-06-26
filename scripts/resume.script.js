@@ -60,7 +60,7 @@ const getHtml = async ()=>{
 const createPDF = async ()=>{
 	const browser = await puppeteer.launch({ executablePath : CHROME_PATH });
 	const page = await browser.newPage();
-	await page.setContent(await getHtml('latex'));
+	await page.setContent(await getHtml());
 	/* https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagepdfoptions */
 	await page.pdf({ path : `${resumeRoot}/Scott Tolksdorf - resume.pdf` })
 	await browser.close();

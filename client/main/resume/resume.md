@@ -20,14 +20,14 @@
 
 ## Notable Projects
 
-### [↗️myo.js](https://github.com/stolksdorf/myo.js)
+### [↗️ myo.js](https://github.com/stolksdorf/myo.js)
 The official javascript library for Myo Armband, the most popular way to develop for Myo. Used to power [Myo Diagnostics Page](http://diagnostics.myo.com/).
 
 
-### [↗️homebrewery](https://github.com/stolksdorf/homebrewery)
+### [↗️ homebrewery](https://github.com/stolksdorf/homebrewery)
 Creates authentic looing D&D material using only Markdown. Over 250,000 documents have been made using it, handling 400 requests per minute.
 
-### [↗️vitreum](https://github.com/stolksdorf/vitreum)
+### [↗️ vitreum](https://github.com/stolksdorf/vitreum)
 Custom build system for modern web apps, similar to Webpack. First version 2013, predates most modern fullstack build systems, while being feature similar.
 
 
@@ -81,18 +81,18 @@ Empowers colleagues through mentorship, automation, and strategtic thinking. A b
 
 #### Solution Architect
 - Productized the company's pricing strategy into a high-performance service; allowing key metrics to be monitored and updated via machine learning, leading to the creation of our data science team.
-- Automated key parts of our acquisiton funnel, allowing our team to greatly increase the size and quality of our funnel without needing to make additional hires
-- Implemented a service and source of truth for locations and geofences. Used by marketting, data science, engineering, and pricing teams to automate their workflows.
+- Automated key parts of our acquisition funnel, allowing our team to greatly increase the size and quality of our funnel without needing to make additional hires
+- Implemented a service and source of truth for locations and geofences with over 22,000 regions. Used by marketting, data science, engineering, and pricing teams to automate their workflows and to geotag their information cross-team.
 
 
 ### [North](https://www.bynorth.com/) _2014 - 2019_
 
 #### Fullstack Architect <!-- _2018 - 2019_ -->
-- Onboarded 4 new developers, including extensive code reviews and 1-on-1 mentoring.
-- Maintined and enhanced our internal build system as other teams adopted it.
 - Integration of Shopify Point-of-sale, Shopify Web, and React into a single retail app for retail applications.
+- Maintained and enhanced our internal build system as other teams adopted it.
 - Oversaw full company brand change for both external and internal web assets.
 - Created a new style of CMS utilizing in-repo YAML and Markdown, editable by non-technicals via [prose.io](https://prose.io).
+- Onboarded 4 new developers, including extensive code reviews and 1-on-1 mentoring.
 
 #### Rapid Prototyping <!-- _2016 - 2018_ -->
 - Helped create a prototype Alexa integration with our product that Jeff Bezos demoed.
@@ -102,10 +102,9 @@ Empowers colleagues through mentorship, automation, and strategtic thinking. A b
 
 
 #### Web Lead <!-- _2014 - 2016_ -->
-- Directly hired 5 people to team, who each went on to become team leads as we grew.
 - Launched an fully featured app store in 3 months with 3 developers.
 - Designed and Implemented a blazing fast method of server-side rendering for our webapps.
-
+- Directly hired 5 people to team, who each went on to become team leads as we grew.
 
 
 <!--

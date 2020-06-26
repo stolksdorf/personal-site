@@ -13,7 +13,6 @@ const downloadLink = '/' + require('../resume/Scott Tolksdorf - resume.pdf');
 function ResumePage(){
 	return <div className='ResumePage'>
 		<Title>Resume - Scott Tolksdorf</Title>
-
 		<div className='links no-print'>
 			<a href={downloadLink}>
 				<i className='fa fa-fw fa-cloud-download' />

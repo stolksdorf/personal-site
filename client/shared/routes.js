@@ -1,17 +1,13 @@
 module.exports = {
 	main : {
 		home : '/',
+		about : '/about',
 		resume : '/resume',
-		tutoring : '/tutoring',
-		mentorship : '/tutoring',
+		blog : '/blog',
+		projects : '/projects',
 		notFound : '/oops',
-
-		blog : '/blog'
 	},
 
-	api : {
-		sendMail : '/api/send_email'
-	},
 
 	external : {
 		github : 'https://github.com/stolksdorf',
