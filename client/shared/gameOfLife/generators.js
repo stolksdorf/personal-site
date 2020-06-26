@@ -1,4 +1,6 @@
 
+const {fromCoord} = require('./gol.engine.js');
+
 function Glider(){return null;}
 function Cross(){return null;}
 function Square(){return null;}

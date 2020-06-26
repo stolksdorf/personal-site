@@ -1,159 +1,138 @@
-
-.what-the-hex(){background-image:url('https://www.toptal.com/designers/subtlepatterns/patterns/what-the-hex.png');background-blend-mode:multiply; }
-.full-bloom(){background-image:url('https://www.toptal.com/designers/subtlepatterns/patterns/full-bloom.png');background-blend-mode:multiply; }
-.funky-lines(){background-image:url('https://www.toptal.com/designers/subtlepatterns/patterns/funky-lines.png');background-blend-mode:multiply; }
-.tiny-squares(){background-image:url('https://www.toptal.com/designers/subtlepatterns/patterns/tiny-squares.png');background-blend-mode:multiply; }
-.backgroundAnimation(){
-	animation : slide 50s linear infinite;
-	@keyframes slide {
-		0%{ background-position: 0 0; }
-		100%{ background-position: 0 100%; }
-	}
-}
 .HomePage{
-	position : relative;
-	display  : flex;
-	overflow : hidden;
-	height   : 100vh;
-	color    : white;
-	//justify-content: space-between;
-	//align-items: center;
-	.left{
-		position        : relative;
-		display         : flex;
-		z-index : 30;
-		//background-color: red;
-		width           : 40%;
-		color           : black;
-		color           : white;
+	width : 100%;
+	height : 100%;
 
-		//border: 5px solid purple;
-		.name{
-			font-size   : 5em;
-			font-weight : 800;
-			h1{
-				font-size      : 1em;
-				letter-spacing : 0.1em;
-			}
-			h2{
-				margin-top : -0.5em;
-				font-size  : 0.65em;
-			}
-		}
-		.content{
-			width:90%;
-			background-color: blue;
-			display: flex;
-			justify-content : center;
-			align-items     : center;
-			flex-direction  : column;
-			background-color : #333;
-			box-shadow       : 0px 0px 20px 5px black;
-			z-index : 20;
 
-			.what-the-hex();
+	font-weight: 800;
+
+	.content{
+		z-index : 10;
+		h1{
+
 		}
 
-		.accentRed{
-			//transform:translateX(-10%);
-			position         : absolute;
-			top              : 0;
-			left             : 50%;
-			z-index          : -1;
-			height           : 100%;
-			width            : 50%;
-			background-color : @red;
-			box-shadow       : 0px 0px 20px 1px black;
+		nav{
+			list-style-type: none;
+			font-size: 4em;
+			text-transform: uppercase;
 
-			z-index : 20;
-
-
-			//transition       : all 0.25s ease-in;
-
-			&::after{
-				//.what-the-hex();
-				.full-bloom();
-				.backgroundAnimation();
-				content                     : '';
-				position                    : absolute;
-				background-color            : @red;
-				top:0;left:0;right:0;bottom : 0;
-			}
-		}
-	}
-	.right{
-		display         : flex;
-		z-index         : 20;
-		//width   : 50%;
-		padding-left    : 100px;
-		justify-content : center;
-		align-items     : center;
-		position:relative;
-		.buttons{
-			width     : 80%;
-			max-width : 850px;
-			z-index : 20;
-		}
-		.buttons button{
-			//@notch           : 20px;
-			position         : relative;
-			overflow         : hidden;
-			height           : 3em;
-			width            : 15em;
-			margin           : 1em;
-			padding          : 0;
-			cursor           : pointer;
-			background-color : transparent;
-			//-webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% @notch, calc(100% - @notch) 0);
-			//clip-path: polygon(0 0, 0 100%, 100% 100%, 100% @notch, calc(100% - @notch) 0);
-			color            : #333;
-			text-align       : left;
-			//border : none;
-			border           : 2px solid red;
-			//border-bottom-left-radius: 50px 20px;
-			transition       : all 0.25s;
-			//font-weight:800;
-			i{
-				vertical-align : middle;
-				margin         : 0 15px;
-				font-size      : 2em;
-			}
-			&:hover{
-				color : white;
-				i{color : white !important;}
-				.slide{
-					transform : translateX(0%);
+			a{
+				display: block;
+				cursor: pointer;
+				opacity: 0.6;
+				color : @zenWhite;
+				text-decoration: none;
+				&:hover{
+					opacity: 1;
 				}
 			}
-			.slide{
-				position   : absolute;
-				top        : 0;
-				right      : 0;
-				bottom     : 0;
-				left       : 0;
-				z-index    : -1;
-				transition : all 0.25s;
-				//height    : 100%;
-				//width     : 100%;
-				transform  : translateX(-100%);
-			}
 		}
-		button.red{ border-color:@red; i{color:@red;} .slide{background-color: @red;} }
-		button.teal{ border-color:@teal; i{color:@teal;} .slide{background-color: @teal;} }
-		button.green{ border-color:@green; i{color:@green;} .slide{background-color: @green;} }
-		button.blue{ border-color:@blue; i{color:@blue;} .slide{background-color: @blue;} }
-		button.steel{ border-color:@steel; i{color:@steel;} .slide{background-color: @steel;} }
-		button.purple{ border-color:@purple; i{color:@purple;} .slide{background-color: @purple;} }
-		button.orange{ border-color:@orange; i{color:@orange;} .slide{background-color: @orange;} }
+
 	}
 
+	// header{
+	// 	display             : grid;
+	// 	max-width           : 6em;
+	// 	font-size           : 3em;
+	// 	grid-column-gap     : 15px;
+	// 	grid-row-gap        : 25px;
+	// 	//border : 1px solid black;
+	// 	grid-template-areas:
+	// 	"card title"
+	// 	".    subtitle"
+	// 	".    buttons";
+	// 	//margin-top: 50px;
+	// 	//margin-left: 50px;
+	// 	.card{ //double line
+	// 		font-size : 2.5em;
+	// 	}
+	// 	.card{
+	// 		@size            : 1.6em;
+	// 		display          : inline-block;
+	// 		height           : @size;
+	// 		width            : @size;
+	// 		padding          : 0;
+	// 		background-color : @blue;
+	// 		color            : white;
+	// 		//line-height: 4.5em;
+	// 		line-height      : @size;
+	// 		text-align       : center;
+	// 		grid-area        : card;
+	// 		justify-self     : end;
+	// 		i{
+	// 			font-size : 1em;
+	// 		}
+	// 	}
+	// 	h1{
+	// 		font-family : 'Lato';
+	// 		font-size   : 2.6em;
+	// 		font-weight : 900;
+	// 		font-weight : 900;
+	// 		line-height : 0.8em;
+	// 		grid-area   : title;
+	// 	}
+	// 	p{
+	// 		font-family : 'Lato';
+	// 		//font-size: 0.5em;
+	// 		font-size   : 1.0em;
+	// 		font-weight : 400;
+	// 		font-weight : 400;
+	// 		grid-area   : subtitle;
+	// 	}
+	// 	.buttons{
+	// 		width : 800px;
+	// 		//max-width : 360px;
+	// 		grid-area : buttons;
+	// 		display: flex;
+	// 		flex-wrap:wrap;
+
+	// 		font-size: 0.5em;
+
+
+	// 		.slideButton(@color : @blue){
+	// 			width : 8em;
+	// 			display                 : flex;
+	// 			margin                  : 0.5em;
+	// 			cursor                  : pointer;
+	// 			background-image        : linear-gradient(to right, @color 50%, white 50%), linear-gradient(to right, white 50%, @color 50%);
+	// 			background-position     : 1.4em 0;
+	// 			background-clip         : text, border-box;
+	// 			background-size         : 200% 100%;
+	// 			color                   : transparent;
+	// 			text-align              : center;
+	// 			border                  : 2px solid @color;
+	// 			transition              : background-position 0.25s ease;
+
+	// 			-webkit-background-clip : text, border-box;
+	// 			align-items             : center;
+	// 			span{
+	// 				background-clip         : text, border-box;
+	// 				text-align              : center;
+	// 				-webkit-background-clip : text, border-box;
+	// 				flex-grow               : 1;
+	// 			}
+	// 			&:hover{
+	// 				background-position : -100% 0;
+	// 			}
+	// 		}
+	// 		.button{
+	// 			&.teal{ .slideButton(@teal); }
+	// 			&.steel{ .slideButton(@steel); }
+	// 			&.orange{ .slideButton(@orange); }
+	// 			&.purple{ .slideButton(@purple); }
+	// 			&.blue{ .slideButton(@blue); }
+	// 			&.red{ .slideButton(@red); }
+	// 		}
+	// 	}
+	// }
 	.GameOfLife{
-		position: absolute;
-		top:0;
-		left:0;
-		right:0;
-		bottom:0;
-		z-index : -1;
+		position : absolute;
+		top      : 0;
+		right    : 0;
+		bottom   : 0;
+		left     : 0;
+		z-index  : -1;
+		overflow : hidden;
 		.cell{
 			z-index : 10
 		}

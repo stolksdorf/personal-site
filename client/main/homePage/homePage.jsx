@@ -7,103 +7,113 @@ const {Link} = require('pico-router');
 
 const Footer = require('../footer/footer.jsx');
 
+const Colors = require('../colors.js')
 
-const buttons = [
-	{
-		text : 'Resume',
-		icon : 'file-text-o',
-		color : 'teal',
-		link : Routes.main.resume
-	},
-	{
-		text : 'Github',
-		icon : 'github',
-		color : 'steel',
-		link : Routes.external.github
-	},
-	{
-		text : 'Mentorship',
-		icon : 'user-plus',
-		color : 'orange',
-		link : Routes.main.mentorship
-	},
-	{
-		text : 'Blog',
-		icon : 'pencil-square-o',
-		color : 'purple',
-		link : Routes.main.blog
-	},
-	{
-		text : 'LinkedIn',
-		icon : 'linkedin',
-		color : 'blue',
-		link : Routes.external.linkedin
-	},
-	{
-		text : 'Email',
-		icon : 'envelope-o',
-		color : 'red',
-		link : Routes.external.linkedin
-	},
-]
+const buttons = require('./buttons.js')
 
 
 //https://nicepage.com/doc/article/20348/web-design-3-0-when-your-web-design-really-matters
 
-const {GameOfLife, Glider, Line, Square} = require('shared/gameOfLife/gameOfLife.jsx');
 
+
+
+
+
+
+
+const Verbs = [
+	'build',
+	'design',
+	'architct',
+	'create',
+	'cobble together',
+	'ship'
+];
+
+const Projects = [
+	'Slack Bots',
+	'D&D Tools',
+	'Nerdy Things',
+]
+
+
+
+
+
+
+
+const {GameOfLife, Glider, Line, Square} = require('shared/gameOfLife/gameOfLife.jsx');
+function GOL(){
+	return <GameOfLife delay={200} pixelSize={12}>
+		<Line y={40}/>
+		<Glider x={5} y={20} dir={-1} />
+		<Glider x={20} y={35} dir={1} />
+		<Square x={-15} y={30} dir={-1} />
+	</GameOfLife>
+}
+
+
+
+function Button({icon, color, text, href, ...props}){
+
+	return <Link className={`button ${color}`} href={href} key={text}>
+		<i className={`fa fa-fw fa-${icon}`} />
+		<span>{text}</span>
+
+	</Link>
+
+	return <button className='hint--bottom-right' {...props} key={text} aria-label='test this is a longer piece of text'>
+		<i className={`fa fa-fw fa-${icon}`} />
+		<span>{text}</span>
+	</button>
+
+}
+
+function Subheader(){
+	return <p>
+		I Build Things
+	</p>
+
+}
+
+
+const links = [
+	// {
+	// 	text : "About",
+	// 	url : Routes.main.about,
+	// },
+	{
+		text : "Resume",
+		url : Routes.main.resume,
+	},
+	// {
+	// 	text : "Blog",
+	// 	url : Routes.main.blog,
+	// },
+	// {
+	// 	text : "Projects",
+	// 	url : Routes.main.projects,
+	// },
+	{
+		text : "Github",
+		url : Routes.external.github
+	},
+
+
+]
 
 
 function HomePage(){
 	return <div className={`HomePage`}>
-
-
-		<div className='left'>
-
-
-
-			<div className='accentRed' />
-			{/*<div className='accentGrey' /> */}
-
-			<div className='content'>
-				<div className='name'>
-					<h1>Scott</h1>
-					<h2>Tolksdorf</h2>
-				</div>
-				<small>I build things</small>
-			</div>
-
-		</div>
-
-
-		<div className='right'>
-
-			<div className='buttons'>
-				{buttons.map((btn)=>{
-					return <Link href={btn.link} key={btn.text}>
-						<button className={btn.color}>
-							<div className='slide' />
-							<i className={`fa fa-fw fa-${btn.icon}`} /> {btn.text}
-						</button>
-					</Link>
+		<div className='content'>
+			<h1>Scott Tolksdorf</h1>
+			<nav>
+				{links.map(({text, url})=>{
+					return <Link href={url} key={text}>{text}</Link>
 				})}
-			</div>
-
-			<GameOfLife delay={800} pixelSize={12}>
-				<Line y={40}/>
-				<Glider x={5} y={20} dir={-1} />
-
-				<Glider x={20} y={35} dir={1} />
-
-				<Square x={-15} y={30} dir={-1} />
-
-			</GameOfLife>
+			</nav>
 		</div>
-
-
-
-
-		{/*<Footer />*/}
+		<GOL />
 	</div>;
 };
 

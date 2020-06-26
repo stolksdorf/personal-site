@@ -10,23 +10,23 @@ const {CreateRouter, Link} = require('pico-router');
 
 const HomePage = require('./homePage/homePage.jsx');
 const ResumePage = require('./resumePage/resumePage.jsx');
-const TutoringPage = require('./tutoringPage/tutoringPage.jsx');
+//const TutoringPage = require('./tutoringPage/tutoringPage.jsx');
+const NotFound = require('./notFound/notFound.jsx');
 
 
 const Router = CreateRouter({
 	[Routes.home] : <HomePage />,
 	//[Routes.home] : <div>HOME  <Link href={Routes.resume}>Resume</Link></div>,
 	[Routes.resume] : <ResumePage />,
-	[Routes.tutoring] : <TutoringPage />,
-	[Routes.notFound] : <div>not found</div>
+	//[Routes.tutoring] : <TutoringPage />,
+	[Routes.notFound] : <NotFound />
 });
 
 
 function Main({url='/'}){
-	console.log('rendering');
 	return <div className='Main'>
 		<Title>Scott Tolksdorf</Title>
-		<Router defaultUrl={url} />
+		<Router serverSideUrl={url} />
 	</div>
 }
 

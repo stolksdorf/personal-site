@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,900&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:300,400,700');
 
+@import './colors.less';
 
-require('./reset.less');
-require('./colors.less');
+
+// require('./reset.less');
+// require('./colors.less');
+// require('./hint.less');
 
 html, body, main{
 	height : 100%;
@@ -11,6 +14,15 @@ html, body, main{
 	//font-family: 'Lato', sans-serif;
 	//font-family: 'Roboto Slab', serif;
 	font-family: 'Roboto', sans-serif;
+	padding : 0;
+	margin : 0;
+
+	background-color: @automated;
+	color : @zenWhite;
+}
+
+h1,h2,h3,h4,h5{
+	margin: 0;
 }
 
 .Main{
@@ -20,3 +32,10 @@ html, body, main{
 //height : 800px;
 
 }
+
+
+
+.what-the-hex(){background-image:url('https://www.toptal.com/designers/subtlepatterns/patterns/what-the-hex.png');background-blend-mode:multiply; }
+.full-bloom(){background-image:url('https://www.toptal.com/designers/subtlepatterns/patterns/full-bloom.png');background-blend-mode:multiply; }
+.funky-lines(){background-image:url('https://www.toptal.com/designers/subtlepatterns/patterns/funky-lines.png');background-blend-mode:multiply; }
+.tiny-squares(){background-image:url('https://www.toptal.com/designers/subtlepatterns/patterns/tiny-squares.png');background-blend-mode:multiply; }

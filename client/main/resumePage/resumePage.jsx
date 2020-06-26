@@ -1,19 +1,34 @@
 require('./resumePage.less');
+require('../resume/resume.less');
+const React       = require('react');
+const Markdown = require('pico-md/component');
 
-const React = require('react');
+const { Title } = require('vitreum/headtags');
 
-const resumeText = require('../../../resume/resume.md');
+const resumeText = require('../resume/resume.md');
+const downloadLink = '/' + require('../resume/Scott Tolksdorf - resume.pdf');
 
-const Markdown = require('pico-md/component.js');
 
-//TODO: Break this into a resume component, maybe in shared
-// Should be able to render as static right into the PDF generator
 
-const ResumePage = function(){
+function ResumePage(){
 	return <div className='ResumePage'>
-		<Markdown content={resumeText} />
-	</div>;
-}
-
+		<Title>Resume - Scott Tolksdorf</Title>
+		<div className='links no-print'>
+			<a href={downloadLink}>
+				<i className='fa fa-fw fa-cloud-download' />
+			</a>
+			<a onClick={()=>window.print()}>
+				<i className='fa fa-fw fa-print' />
+			</a>
+		</div>
+		<div className={`container`}>
+			<Markdown
+				className='resume'
+				content={resumeText}
+				options={{ allowHtml : true }}
+			/>
+		</div>
+	</div>
+};
 
 module.exports = ResumePage;
