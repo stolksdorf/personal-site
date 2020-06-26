@@ -18,9 +18,6 @@ const buttons = require('./buttons.js')
 
 
 
-
-
-
 const Verbs = [
 	'build',
 	'design',

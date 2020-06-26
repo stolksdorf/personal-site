@@ -8,9 +8,11 @@ const Routes = require('../client/shared/routes.js');
 //TODO; add in favicon
 
 router.get(Object.values(Routes.main), (req, res) => {
+
 	const body = require('../build/ssr.js')({
 		url : req.url
 	});
+
 
 	return res.send(html({
 		head : `
